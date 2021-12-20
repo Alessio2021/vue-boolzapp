@@ -39,13 +39,16 @@ html {
 .col-sx {
     height: 100%;
     width: 35%;
-    background-color: red;
+    background-color: #EAEAEA;
+    border-right: 1px solid lightgray;
 }
 
 .col-dx {
     height: 100%;
     width: 65%;
-    background-color: blue;
+    background-color: #EAEAEA;
+    border-right: 1px solid lightgray;
+
 }
 
 img {
@@ -55,10 +58,6 @@ img {
 
 .d-flex {
     display: flex;
-}
-
-.header {
-    background-color: #EAEAEA;
 }
 
 .logo {
@@ -75,6 +74,10 @@ img {
 
 .column {
     flex-direction: column;
+}
+
+.end {
+    justify-content: end;
 }
 
 .dx {
@@ -106,4 +109,50 @@ img {
     color: #8EDAFC;
     background-color: white;
     border-radius: 50%;
+}
+
+.search {
+    margin: 10px;
+    background-color: white;
+}
+
+input {
+    width: 80%;
+    outline: none;
+    border: none;
+}
+
+.users {
+    width: 95%;
+    list-style-type: none;
+    background-color: white;
+}
+
+.sx {
+    width: 15%;
+}
+
+.text {
+    width: 55%;
+}
+
+.time {
+    width: 30%;
+}
+
+li {
+    border-bottom: 1px solid lightgrey;
+}
+
+.header {
+    height: 75px;
+}
+
+.main-dx {
+    height: calc(100% - 150px);
+    background-image: url(../img/mine.jpg);
+}
+
+.footer-dx {
+    height: 75px;
 }
