@@ -24,7 +24,7 @@ html {
 
 .container-bottom {
     height: 85%;
-    background-color: DBDBD2;
+    background-color: #DBDBD2;
 }
 
 .main-window {
@@ -34,6 +34,76 @@ html {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+}
+
+.col-sx {
+    height: 100%;
+    width: 35%;
+    background-color: red;
+}
+
+.col-dx {
+    height: 100%;
+    width: 65%;
     background-color: blue;
+}
+
+img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.d-flex {
     display: flex;
+}
+
+.header {
+    background-color: #EAEAEA;
+}
+
+.logo {
+    width: 50%;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.dx {
+    width: 50%;
+    justify-content: end;
+}
+
+.pad-1 {
+    padding: 0.5em 1em;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.font-40px {
+    font-size: 40px;
+}
+
+.grey {
+    color: grey;
+}
+
+.notify {
+    background-color: #8EDAFC;
+}
+
+.lightblue {
+    color: #8EDAFC;
+    background-color: white;
+    border-radius: 50%;
 }
