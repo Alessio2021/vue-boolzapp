@@ -58,10 +58,10 @@
                             </div>
                             <div class="d-flex column text align-self-center">
                                 <h3>{{contact.name}}</h3>
-                                <h4 class="grey">{{contact.messages[2].text}}</h4>
+                                <h4 class="grey">{{contact.messages[contact.messages.length - 1].text}}</h4>
                             </div>
                             <div class="d-flex time grey end">
-                                <h5>{{contact.messages[2].date}}</h5>
+                                <h5>{{contact.messages[contact.messages.length - 1].date}}</h5>
                             </div>
                         </li>
                         <!-- <li class="d-flex">
