@@ -52,7 +52,7 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <ul class="users">
-                        <li v-for="contact in contacts" class="d-flex">
+                        <li @click="getIndex(index)" v-for="(contact, index) in contacts" class="d-flex">
                             <div class="pad-1">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             </div>
@@ -105,11 +105,11 @@
                 <div class="col-dx">
                     <div class="header d-flex">
                         <div class="pad-1">
-                            <img src="img/avatar_5.jpg" alt="">
+                            <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         </div>
                         <div class="d-flex column text align-self-center">
-                            <h3>{{contacts[2].name}}</h3>
-                            <h4 class="grey">{{contacts[2].messages[2].date}}</h4>
+                            <h3>{{contacts[counter].name}}</h3>
+                            <h4 class="grey">{{contacts[counter].messages[2].date}}</h4>
                         </div>
                         <div class="dx d-flex align-center">
                             <i class="fas fa-search grey pad-1 font-20 grey"></i>
@@ -120,7 +120,7 @@
                     <div class="main-dx">
                         <div class="container-chat">
                             <ul class="d-flex column">
-                                <li :class="(message.status == 'received') ? 'received' : 'sent' " v-for="message in contacts[2].messages" class="d-flex column received">
+                                <li :class="(message.status == 'received') ? 'received' : 'sent' " v-for="message in contacts[counter].messages" class="d-flex column received">
                                     <h4>{{message.text}}</h4>
                                     <h6 class="grey">{{message.date}}</h6>
                                 </li>
