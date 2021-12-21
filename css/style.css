@@ -168,6 +168,9 @@ input {
 li {
     border-bottom: 1px solid lightgrey;
 }
+.main-window .col-sx ul li {
+    cursor: pointer;
+}
 
 /* colonna destra */
 
