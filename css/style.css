@@ -85,7 +85,7 @@ ul {
 
 .col-sx {
     height: 100%;
-    min-width: 400px;
+    min-width: 600px;
     background-color: #EAEAEA;
     border-right: 1px solid lightgray;
 }
@@ -150,6 +150,10 @@ input {
     list-style-type: none;
     background-color: white;
     overflow-x: hidden;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .sx {

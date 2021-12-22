@@ -10,10 +10,14 @@
 // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite(es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
 const app = new Vue(
     {
         el: '#app',
         data: {
+            searchText: '',
             text: '',
             counter: 0,
             contacts: [
@@ -113,27 +117,40 @@ const app = new Vue(
                 return this.counter = index
             },
             getText: function () {
+                dayjs.extend(window.dayjs_plugin_customParseFormat);
+                let data = dayjs().format("D/M/YYYY HH:mm:ss");
+
                 if (this.text != '') {
                         this.contacts[this.counter].messages.push(
                             {  
-                        date: "10/01/2020 15:30:55",
+                        date: data,
                         text: this.text,
                         status: "sent",
                         }
                     );
+                    setTimeout(() => {
+                        this.contacts[this.counter].messages.push(
+                            {
+                                date: data,
+                                text: 'ok',
+                                status: "received",
+                            })
+                        }, 1000);
                 }
                 this.text = '';
-
-                setTimeout(() => {
-                    this.contacts[this.counter].messages.push(
-                        {
-                            date: "10/01/2020 15:30:55",
-                            text: 'ok',
-                            status: "received",
-                        })        
-                    }, 1000);
                 
-            }
+                
+            },
+            getChat: function () {
+                this.contacts.forEach(contact => {
+                    if (contact.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+                        contact.visible = true;
+                    } else {
+                        contact.visible = false
+                    }
+                });
+            },
+        
         },
     },
 );
