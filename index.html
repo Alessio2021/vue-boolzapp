@@ -132,7 +132,7 @@
                             <i class="far fa-smile font-20 grey"></i>
                         </div>
                         <div class="input-chat d-flex align-center pad-1">
-                            <input class="font-20" type="text" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter='getText' v-model="text" class="font-20" type="text" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="voice d-flex align-center pad-1">
                             <i class="font-20 fas fa-microphone grey"></i>
