@@ -33,8 +33,8 @@
                 <div class="col-sx">
                     <div class="header d-flex">
                         <div class="logo d-flex align-center pad-1">
-                            <img src="img/avatar_io.jpg" alt="">
-                            <h4>Nome Utente</h4>
+                            <img src="img/avatar_5.jpg" alt="">
+                            <h4>Alessio</h4>
                         </div>
                         <div class="dx d-flex align-center">
                             <i class="fas fa-redo-alt pad-1 font-20 grey"></i>
@@ -127,8 +127,13 @@
                         <div class="container-chat">
                             <ul class="d-flex column">
                                 <li :class="(message.status == 'received') ? 'received' : 'sent' " v-for="message in contacts[counter].messages" class="d-flex column received">
+                                    <i @click="menu" class="fas fa-angle-down"></i>
                                     <h4>{{message.text}}</h4>
                                     <h6 class="grey">{{message.date}}</h6>
+                                    <div class="menu">
+                                        <div>Message Info</div>
+                                        <div>Delete Message</div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

@@ -17,6 +17,7 @@ const app = new Vue(
     {
         el: '#app',
         data: {
+            find: false,
             searchText: '',
             text: '',
             counter: 0,
@@ -122,7 +123,7 @@ const app = new Vue(
 
                 if (this.text != '') {
                         this.contacts[this.counter].messages.push(
-                            {  
+                            {
                         date: data,
                         text: this.text,
                         status: "sent",
@@ -150,6 +151,16 @@ const app = new Vue(
                     }
                 });
             },
+            menu: function () {
+                find == true != find == false
+                console.log(find);
+                const smallMenu = document.querySelector('.menu')
+                if (find = true) {
+                    smallMenu.classList.add('d-block')
+                } else {
+                    smallMenu.classList.remove('d-block')
+                }
+            }
         
         },
     },
