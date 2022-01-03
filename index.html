@@ -126,13 +126,13 @@
                     <div class="main-dx">
                         <div class="container-chat">
                             <ul class="d-flex column">
-                                <li :class="(message.status == 'received') ? 'received' : 'sent' " v-for="message in contacts[counter].messages" class="d-flex column received">
-                                    <i @click="menu" class="fas fa-angle-down"></i>
+                                <li :class="(message.status == 'received') ? 'received' : 'sent' " v-for="(message, i) in contacts[counter].messages" class="d-flex column received">
+                                    <i @click="message.find = !message.find" class="fas fa-angle-down"></i>
                                     <h4>{{message.text}}</h4>
                                     <h6 class="grey">{{message.date}}</h6>
-                                    <div class="menu">
+                                    <div v-show="message.find" class="menu">
                                         <div>Message Info</div>
-                                        <div>Delete Message</div>
+                                        <div @click="cancel(i)">Delete Message</div>
                                     </div>
                                 </li>
                             </ul>

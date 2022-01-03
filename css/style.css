@@ -265,9 +265,9 @@ h6 {
     text-align: center;
     line-height: 32px;
     right: 30px;
-    display: none;
 }
 
-.d-block {
-    display: block;
+.menu div:hover {
+    background-color: lightgrey;
+    cursor: pointer;
 }
