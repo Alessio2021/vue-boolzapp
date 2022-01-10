@@ -141,6 +141,8 @@ const app = new Vue(
                         date: data,
                         text: this.text,
                         status: "sent",
+                        find: false,
+
                         }
                     );
                     setTimeout(() => {
@@ -149,6 +151,7 @@ const app = new Vue(
                                 date: data,
                                 text: 'ok',
                                 status: "received",
+                                find: false,
                             })
                         }, 1000);
                 }
